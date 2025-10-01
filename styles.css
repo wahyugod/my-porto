@@ -11,7 +11,7 @@
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 90%;
   scroll-behavior: smooth;
 }
 
@@ -190,7 +190,7 @@ span {
 
 @media (max-width: 768px) {
   .home-img img {
-    width: 50vw; /* lebih kecil proporsional di HP */
+    width: 40vw; /* lebih kecil proporsional di HP */
     max-width: 200px;
   }
 }
@@ -810,10 +810,10 @@ span {
 .timeline-item::before {
   content: "";
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 8px;
+  height: 8px;
   background: #b74b4b;
-  border: 3px solid #fff;
+  border: 1px solid #fff;
   border-radius: 50%;
   z-index: 1;
   top: 50%; /* posisi tengah */
@@ -821,11 +821,11 @@ span {
 }
 
 .timeline-item.left::before {
-  right: 5px; /* geser menjauh dari garis tengah */
+  right: 9px; /* geser menjauh dari garis tengah */
 }
 
 .timeline-item.right::before {
-  left: 5px; /* geser menjauh dari garis tengah */
+  left: 9px; /* geser menjauh dari garis tengah */
 }
 
 /* Responsive */
