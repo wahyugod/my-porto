@@ -27,19 +27,31 @@ body {
   color: white;
 }
 
+/* KODE BARU (PERBAIKAN) */
+/* KODE BARU (PERBAIKAN) */
 header {
-  margin-top: 20px;
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 1rem 9%;
-  background-color: transparent;
-  filter: drop-shadow(10px);
+  right: 0;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  z-index: 100;
+  justify-content: space-between; /* logo kiri, hamburger/menu kanan */
+  padding: 1.2rem 5%; /* padding lebih kecil & proporsional */
+  background-color: black;
+  z-index: 1000;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+@media (max-width: 995px) {
+  header {
+    padding: 1rem 4%; /* lebih kecil, biar hamburger muat */
+  }
 }
 
 .logo {
@@ -104,19 +116,23 @@ nav a.active {
 }
 
 @media (max-width: 995px) {
-  #hamburger-menu {
-    display: block;
-  }
   nav {
     position: absolute;
     display: none;
     top: 100%;
-    left: 0; /* Ubah 'right: 0' menjadi 'left: 0' agar menempel di kiri */
-    width: 100%; /* Ubah lebar menjadi 100% untuk memenuhi layar */
+    left: 0;
+    width: 100%;
     border-bottom: 3px solid #b74b4b;
     border-top: 3px solid #b74b4b;
     padding: 1.5rem;
     background-color: #161616;
+    z-index: 999;
+  }
+
+  #hamburger-menu {
+    display: block;
+    font-size: 2rem; /* biar lebih jelas */
+    cursor: pointer;
   }
 
   nav.active {
@@ -125,7 +141,7 @@ nav a.active {
 
   nav a {
     display: block;
-    font-size: 1.1rem; /* lebih kecil di HP */
+    font-size: 1.5rem; /* lebih kecil di HP */
     margin-left: 1.2rem;
     margin-bottom: 1rem;
   }
@@ -825,9 +841,37 @@ span {
   left: 9px; /* geser menjauh dari garis tengah */
 }
 
-/* Responsive */
-
 /* === Responsive Media Queries untuk Education Section === */
+
+/* Tampilan Tablet (kurang dari 992px) */
+@media (max-width: 992px) {
+  .education-timeline {
+    max-width: 800px; /* Mengurangi lebar maksimal timeline */
+  }
+
+  .timeline-content {
+    padding: 15px 20px; /* Mengurangi padding di dalam kotak konten */
+  }
+
+  .timeline-content h2 {
+    font-size: 1.8rem; /* Mengecilkan ukuran font judul */
+  }
+
+  .timeline-content h3 {
+    font-size: 1.5rem; /* Mengecilkan ukuran font sub-judul */
+  }
+
+  .timeline-content p {
+    font-size: 1.3rem; /* Mengecilkan ukuran font paragraf */
+  }
+  .timeline-item.left::before {
+    right: 7px; /* geser menjauh dari garis tengah */
+  }
+
+  .timeline-item.right::before {
+    left: 7px; /* geser menjauh dari garis tengah */
+  }
+}
 
 /* Tampilan Mobile (kurang dari 768px) */
 @media (max-width: 768px) {
@@ -876,6 +920,14 @@ span {
   }
   .right::after {
     left: -14px; /* Disesuaikan agar tetap di tengah garis */
+  }
+
+  .timeline-item.left::before {
+    right: 5px; /* geser menjauh dari garis tengah */
+  }
+
+  .timeline-item.right::before {
+    left: 5px; /* geser menjauh dari garis tengah */
   }
 }
 
@@ -1045,34 +1097,5 @@ span {
   }
   100% {
     background-size: 20% 50%, 20% 50%, 20% 50%;
-  }
-}
-
-/* === Responsive Media Query untuk Timeline Education === */
-@media (max-width: 768px) {
-  /* Pindahkan garis utama ke sisi kiri */
-  .timeline::after {
-    left: 20px; /* Jarak dari tepi kiri */
-  }
-
-  /* Buat semua item timeline menjadi lebar penuh */
-  .timeline-item {
-    width: 100%;
-    padding-left: 45px; /* Beri ruang untuk garis dan titik */
-    padding-right: 15px;
-  }
-
-  /* Reset posisi horizontal untuk item kiri dan kanan */
-  .timeline-item.left,
-  .timeline-item.right {
-    left: 0;
-    text-align: left; /* Ratakan semua teks ke kiri agar konsisten */
-  }
-
-  /* Posisikan ulang titik agar menempel pada garis baru di kiri */
-  .timeline-item.left::before,
-  .timeline-item.right::before {
-    left: 12px; /* Sesuaikan posisi horizontal titik */
-    right: auto; /* Hapus properti 'right' */
   }
 }
