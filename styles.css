@@ -933,6 +933,9 @@ span {
   .project-info p {
     font-size: 1.3rem;
   }
+  .project-card img {
+    height: 230px;
+  }
 }
 
 .project-info .btn {
@@ -1042,5 +1045,34 @@ span {
   }
   100% {
     background-size: 20% 50%, 20% 50%, 20% 50%;
+  }
+}
+
+/* === Responsive Media Query untuk Timeline Education === */
+@media (max-width: 768px) {
+  /* Pindahkan garis utama ke sisi kiri */
+  .timeline::after {
+    left: 20px; /* Jarak dari tepi kiri */
+  }
+
+  /* Buat semua item timeline menjadi lebar penuh */
+  .timeline-item {
+    width: 100%;
+    padding-left: 45px; /* Beri ruang untuk garis dan titik */
+    padding-right: 15px;
+  }
+
+  /* Reset posisi horizontal untuk item kiri dan kanan */
+  .timeline-item.left,
+  .timeline-item.right {
+    left: 0;
+    text-align: left; /* Ratakan semua teks ke kiri agar konsisten */
+  }
+
+  /* Posisikan ulang titik agar menempel pada garis baru di kiri */
+  .timeline-item.left::before,
+  .timeline-item.right::before {
+    left: 12px; /* Sesuaikan posisi horizontal titik */
+    right: auto; /* Hapus properti 'right' */
   }
 }
