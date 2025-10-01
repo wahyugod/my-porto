@@ -23,17 +23,26 @@
   </head>
 
   <body>
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader"></div>
+    </div>
     <header>
-      <a href="#" class="logo">My Profile</a>
-      <nav>
-        <a href="#home" class="active">Home</a>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+  <a href="#" class="logo">My Profile</a>
+
+  <div id="hamburger-menu">
+    <i class="fas fa-bars"></i>
+  </div>
+  
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
     <!-- Home Section -->
     <section class="home" id="home">
@@ -339,5 +348,25 @@
       });
     </script>
     <script src="script.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#home", // Mengarahkan animasi ke section dengan id="home"
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0xb74b4b,      // Warna jaring (saya ubah agar sesuai tema merah Anda)
+        backgroundColor: 0x0, // Warna latar belakang (hitam)
+        points: 20.00,        // Jumlah titik
+        maxDistance: 18.00,   // Jarak maksimal antar titik
+        spacing: 15.00        // Jarak antar titik
+      });
+    </script>
   </body>
 </html>
