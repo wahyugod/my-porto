@@ -95,4 +95,20 @@ document.addEventListener("DOMContentLoaded", () => {
       hamburger.classList.remove("active");
     });
   });
+
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+      const subject = `Pesan dari Portfolio - Dari ${name}`;
+      const body = `Halo, nama saya ${name} (${email}).\n\nSaya ingin menyampaikan pesan berikut:\n${message}`;
+      const mailtoLink = `mailto:zeydanfm2006@gmail.com?subject=${encodeURIComponent(
+        subject
+      )}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoLink;
+    });
+  }
 });

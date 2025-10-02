@@ -323,19 +323,23 @@
 
         <!-- Formulir Kontak -->
         <div class="contact-form" data-aos="fade-left">
-          <form
-            action="mailto:zeydanfm2006@gmail.com"
-            method="post"
-            enctype="text/plain"
-          >
-            <input type="text" name="name" placeholder="Your Name" required />
+          <form id="contact-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
             <input
               type="email"
+              id="email"
               name="email"
               placeholder="Your Email"
               required
             />
             <textarea
+              id="message"
               name="message"
               rows="5"
               placeholder="Write your message..."
