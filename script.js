@@ -1,7 +1,7 @@
 const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
-  let fromTop = window.scrollY + 100; // offset biar gak ketutup navbar
+  let fromTop = window.scrollY + 100;
 
   navLinks.forEach((link) => {
     const section = document.querySelector(link.getAttribute("href"));
@@ -73,36 +73,26 @@ window.onload = function () {
 
 window.addEventListener("load", function () {
   let preloader = document.getElementById("preloader");
-
-  // fade out
   preloader.style.opacity = "0";
-
-  // setelah transisi selesai → hilangkan dari DOM
   setTimeout(function () {
     preloader.style.display = "none";
   }, 800);
 });
-
-// === TAMBAHKAN KODE INI UNTUK HAMBURGER MENU ===
-
-// === KODE UNTUK HAMBURGER MENU ===
 
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.querySelector("#hamburger-menu");
   const nav = document.querySelector("nav");
   const navLinks = document.querySelectorAll("nav a");
 
-  // Toggle menu dan ikon saat hamburger di-klik
   hamburger.addEventListener("click", () => {
     nav.classList.toggle("active");
-    hamburger.classList.toggle("active"); // Tambahkan ini
+    hamburger.classList.toggle("active");
   });
 
-  // Tutup menu dan reset ikon saat link di-klik
   navLinks.forEach((link) => {
     link.addEventListener("click", () => {
       nav.classList.remove("active");
-      hamburger.classList.remove("active"); // Tambahkan ini
+      hamburger.classList.remove("active");
     });
   });
 });

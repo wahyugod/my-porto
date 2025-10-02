@@ -12,11 +12,19 @@ html {
   font-size: 90%;
   scroll-behavior: smooth;
 }
+
+@media (min-resolution: 1.25dppx) {
+  html {
+    font-size: 70%;
+  }
+}
+
 @media (max-width: 768px) {
   html {
     font-size: 55%;
   }
 }
+
 body {
   width: 100%;
   height: 100%;
@@ -25,8 +33,6 @@ body {
   color: white;
 }
 
-/* KODE BARU (PERBAIKAN) */
-/* KODE BARU (PERBAIKAN) */
 header {
   position: fixed;
   top: 0;
@@ -34,8 +40,8 @@ header {
   right: 0;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* logo kiri, hamburger/menu kanan */
-  padding: 1.2rem 5%; /* padding lebih kecil & proporsional */
+  justify-content: space-between;
+  padding: 1.2rem 5%;
   background-color: black;
   z-index: 1000;
 }
@@ -48,7 +54,7 @@ body {
 
 @media (max-width: 995px) {
   header {
-    padding: 1rem 4%; /* lebih kecil, biar hamburger muat */
+    padding: 1rem 4%;
   }
 }
 
@@ -79,38 +85,30 @@ nav a.active {
   border-bottom: 3px solid #b74b4b;
 }
 
-/* Pastikan konten di section #home berada di atas animasi Vanta.js */
 #home .home-content,
 #home .home-img {
   position: relative;
   z-index: 2;
 }
 
-/* Atur ikon hamburger */
+/* Hamburger */
 #hamburger-menu {
-  display: none; /* Sembunyikan di desktop */
+  display: none;
   font-size: 1.3rem;
   color: #b74b4b;
   cursor: pointer;
 }
 
-/* --- Desain Hamburger Aktif --- */
-
-/* Transisi untuk ikon agar perubahan lebih mulus */
 #hamburger-menu i {
   transition: transform 0.3s ease;
 }
 
-/* Saat hamburger aktif, putar ikonnya */
 #hamburger-menu.active i {
   transform: rotate(90deg);
 }
 
-/* Ganti ikon 'bars' (☰) menjadi ikon 'times' (×) dari Font Awesome 
-  ketika hamburger aktif.
-*/
 #hamburger-menu.active .fa-bars::before {
-  content: "\f00d"; /* Ini adalah kode Unicode untuk ikon 'times' (silang) */
+  content: "\f00d";
 }
 
 @media (max-width: 995px) {
@@ -129,7 +127,7 @@ nav a.active {
 
   #hamburger-menu {
     display: block;
-    font-size: 2rem; /* biar lebih jelas */
+    font-size: 2rem;
     cursor: pointer;
   }
 
@@ -139,7 +137,7 @@ nav a.active {
 
   nav a {
     display: block;
-    font-size: 1.5rem; /* lebih kecil di HP */
+    font-size: 1.5rem;
     margin-left: 1.2rem;
     margin-bottom: 1rem;
   }
@@ -192,8 +190,8 @@ span {
 
 .home-img img {
   position: relative;
-  width: 25vw; /* awalnya 32vw -> diperkecil */
-  max-width: 400px; /* Batas maksimal agar tidak terlalu besar di layar 4K */
+  width: 25vw;
+  max-width: 400px;
   min-width: 250px;
   border-radius: 50%;
   box-shadow: 0 0 25px #b74b4b;
@@ -253,59 +251,7 @@ span {
   border-right: 0.08em solid #fff;
 }
 
-.typing-text {
-  font-size: 34px;
-  font-weight: 600;
-  min-width: 280px;
-}
-
-.typing-text span {
-  position: relative;
-}
-
-.typing-text span::before {
-  content: "software engineer";
-  color: #b74b4b;
-  animation: words 20s infinite;
-}
-
-.typing-text span::after {
-  content: "";
-  position: absolute;
-  background-color: black;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid black;
-  right: -8;
-  animation: cursor 0.6s infinite;
-}
-
-@keyframes cursor {
-  to {
-    border-left: 3px solid #b74b4b;
-  }
-}
-
-@keyframes words {
-  0%,
-  25% {
-    content: "web developer";
-  }
-  26%,
-  50% {
-    content: "programmer";
-  }
-  51%,
-  75% {
-    content: "ui/ux designer";
-  }
-  76%,
-  100% {
-    content: "game developer";
-  }
-}
-
-/* === Home Section (Updated) === */
+/* Home Section */
 section {
   min-height: 100vh;
   padding: 5rem 9% 5rem;
@@ -347,8 +293,8 @@ span {
 .home-img img {
   position: relative;
   width: 25vw;
-  max-width: 400px; /* Batas maksimal agar tidak terlalu besar di layar 4K */
-  min-width: 200px; /* Batas minimal agar tidak terlalu kecil */
+  max-width: 400px;
+  min-width: 200px;
   border-radius: 50%;
   box-shadow: 0 0 25px #b74b4b;
   cursor: pointer;
@@ -370,7 +316,7 @@ span {
   border: 0.2rem solid #b74b4b;
   font-size: 2rem;
   border-radius: 50%;
-  margin: 3rem 0.75rem; /* Margin diubah agar lebih mudah diatur saat di tengah */
+  margin: 3rem 0.75rem;
   transition: 0.3s ease;
   color: #b74b4b;
 }
@@ -403,9 +349,6 @@ span {
   transform: scale3d(1.03);
 }
 
-/* === Responsive Media Queries untuk Home Section === */
-
-/* Tampilan Tablet & Laptop Kecil (kurang dari 1200px) */
 @media (max-width: 1200px) {
   .home {
     gap: 5rem;
@@ -418,20 +361,16 @@ span {
   }
 }
 
-/* Tampilan Tablet (kurang dari 992px) */
-/* Tampilan Tablet (kurang dari 992px) */
 @media (max-width: 992px) {
   .home {
-    /* Mengubah tata letak menjadi kolom (gambar di atas, teks di bawah) */
-    flex-direction: column; /* <<< BARIS INI TELAH DIUBAH */
-    text-align: center; /* Memusatkan semua teks dan elemen inline */
+    flex-direction: column;
+    text-align: center;
     gap: 3rem;
     margin-top: 5rem;
     margin-bottom: 5rem;
   }
 
   .home-content {
-    /* Memastikan konten (termasuk tombol) berada di tengah */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -450,9 +389,8 @@ span {
   }
 
   .home-img img {
-    width: 45vw; /* Ukuran gambar disesuaikan dengan viewport */
+    width: 45vw;
     max-width: 280px;
-    /* margin-top: 2rem; <-- Dihapus agar tidak ada jarak berlebih di atas gambar */
   }
 
   .social-icons {
@@ -460,10 +398,9 @@ span {
   }
 }
 
-/* Tampilan Mobile (kurang dari 768px) */
 @media (max-width: 768px) {
   section {
-    padding: 5rem 4% 5rem; /* Mengurangi padding di sisi kiri dan kanan */
+    padding: 5rem 4% 5rem;
   }
 
   .home .home-content h1 {
@@ -480,7 +417,6 @@ span {
   }
 }
 
-/* Tampilan Mobile Kecil (kurang dari 480px) */
 @media (max-width: 480px) {
   .home .home-content h1 {
     font-size: 2.5rem;
@@ -498,7 +434,7 @@ span {
   }
 }
 
-/* === Section Headings === */
+/* Section Headings */
 .heading {
   text-align: center;
   font-size: 3rem;
@@ -511,7 +447,6 @@ span {
 }
 
 /* === Skills Section === */
-/* Subheading di dalam Skills */
 .subheading {
   text-align: center;
   font-size: 2rem;
@@ -547,7 +482,7 @@ span {
   color: white;
 }
 
-/* === Projects Grid Section === */
+/* Projects Grid Section */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -580,20 +515,7 @@ span {
   box-shadow: 0 0 25px #b74b4b;
 }
 
-/* === Education List === */
-.education-list {
-  list-style: none;
-  text-align: center;
-  font-size: 1.6rem;
-}
-
-.education-list li {
-  margin: 1rem 0;
-  padding: 0.8rem 1rem;
-  border-bottom: 1px solid #b74b4b;
-}
-
-/* === Contact Section === */
+/* Contact Section */
 #contact p {
   font-size: 1.6rem;
   text-align: center;
@@ -609,7 +531,7 @@ span {
   color: white;
 }
 
-/* === About Section === */
+/* About Section */
 #about {
   display: flex;
   flex-direction: column;
@@ -668,7 +590,6 @@ span {
   display: inline-block;
 }
 
-/* Responsive: Stack column on smaller screens */
 @media (max-width: 768px) {
   .about-container {
     flex-direction: column;
@@ -680,10 +601,10 @@ span {
   }
 }
 
-/* === Skills Section (Final) === */
+/* Skills Section */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* selalu 2 kolom */
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -706,9 +627,9 @@ span {
 }
 
 .center-skill {
-  grid-column: 1 / -1; /* lebar 2 kolom */
-  justify-self: center; /* posisi tengah */
-  width: 70%; /* biar nggak kepanjangan */
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 70%;
 }
 
 .skill-info {
@@ -748,17 +669,15 @@ span {
   transition: width 1.5s ease;
 }
 
-/* Animasi Progress saat Scroll */
 [data-aos] .progress {
   width: 0;
 }
 
 [data-aos].aos-animate .progress {
-  width: inherit; /* gunakan nilai dari inline style di HTML */
+  width: inherit;
   transition: width 1.5s ease-in-out;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
@@ -768,7 +687,7 @@ span {
   }
 }
 
-/* === Education Timeline === */
+/* Education Timeline */
 .timeline {
   position: relative;
   max-width: 900px;
@@ -827,60 +746,55 @@ span {
   border: 1px solid #fff;
   border-radius: 50%;
   z-index: 1;
-  top: 50%; /* posisi tengah */
-  transform: translateY(-50%); /* geser supaya betul-betul center */
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .timeline-item.left::before {
-  right: 9px; /* geser menjauh dari garis tengah */
+  right: 9px;
 }
 
 .timeline-item.right::before {
-  left: 9px; /* geser menjauh dari garis tengah */
+  left: 9px;
 }
 
-/* === Responsive Media Queries untuk Education Section === */
-
-/* Tampilan Tablet (kurang dari 992px) */
 @media (max-width: 992px) {
   .education-timeline {
-    max-width: 800px; /* Mengurangi lebar maksimal timeline */
+    max-width: 800px;
   }
 
   .timeline-content {
-    padding: 15px 20px; /* Mengurangi padding di dalam kotak konten */
+    padding: 15px 20px;
   }
 
   .timeline-content h2 {
-    font-size: 1.8rem; /* Mengecilkan ukuran font judul */
+    font-size: 1.8rem;
   }
 
   .timeline-content h3 {
-    font-size: 1.5rem; /* Mengecilkan ukuran font sub-judul */
+    font-size: 1.5rem;
   }
 
   .timeline-content p {
-    font-size: 1.3rem; /* Mengecilkan ukuran font paragraf */
+    font-size: 1.3rem;
   }
   .timeline-item.left::before {
-    right: 7px; /* geser menjauh dari garis tengah */
+    right: 7px;
   }
 
   .timeline-item.right::before {
-    left: 7px; /* geser menjauh dari garis tengah */
+    left: 7px;
   }
 }
 
-/* Tampilan Mobile (kurang dari 768px) */
 @media (max-width: 768px) {
   .education-timeline {
-    /* Sedikit mengurangi lebar lagi jika diperlukan */
     max-width: 100%;
-    padding: 0 10px; /* Beri sedikit padding agar tidak menempel di tepi layar */
+    padding: 0 10px;
   }
 
   .timeline-container {
-    padding-left: 20px; /* Mengurangi padding agar lebih hemat ruang */
+    padding-left: 20px;
     padding-right: 20px;
   }
 
@@ -900,7 +814,6 @@ span {
     font-size: 1.2rem;
   }
 
-  /* Menyesuaikan posisi panah penunjuk */
   .left::before {
     right: 15px;
   }
@@ -908,28 +821,27 @@ span {
     left: 15px;
   }
 
-  /* Menyesuaikan posisi ikon lingkaran */
   .timeline-container::after {
     width: 20px;
     height: 20px;
     font-size: 1rem;
     border-width: 3px;
-    right: -14px; /* Disesuaikan agar tetap di tengah garis */
+    right: -14px;
   }
   .right::after {
-    left: -14px; /* Disesuaikan agar tetap di tengah garis */
+    left: -14px;
   }
 
   .timeline-item.left::before {
-    right: 5px; /* geser menjauh dari garis tengah */
+    right: 5px;
   }
 
   .timeline-item.right::before {
-    left: 5px; /* geser menjauh dari garis tengah */
+    left: 5px;
   }
 }
 
-/* === Projects Section === */
+/* Projects Section */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -975,7 +887,6 @@ span {
   box-shadow: 0 0 20px #b74b4b;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .project-info h3 {
     font-size: 1.6rem;
@@ -995,7 +906,7 @@ span {
   font-size: 1.4rem;
 }
 
-/* === Contact Section === */
+/* Contact Section */
 .contact-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -1025,7 +936,6 @@ span {
   color: #b74b4b;
 }
 
-/* Contact Form */
 .contact-form form {
   display: flex;
   flex-direction: column;
@@ -1069,7 +979,6 @@ span {
   transition: opacity 0.8s ease;
 }
 
-/* Loader dari kamu */
 .loader {
   width: 45px;
   aspect-ratio: 0.75;
